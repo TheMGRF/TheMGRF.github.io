@@ -46,12 +46,17 @@
 
             <p>
                 <label for="precipitation">Precipitation</label>
-                <input id="precipitation" type="number" step=".01" name="precipitation" value="0.0">
+                <select id="precipitation" name="precipitation">
+                    <option value="none">None</option>
+                    <option value="rain">Rain</option>
+                    <option value="snow">Snow</option>
+                </select>
             </p>
 
             <p>
                 <label for="particle">Ambient Particle</label>
-                <input id="particle" type="text" name="particle">
+                <select id="particle" name="particle">
+                </select>
             </p>
 
             <p>
