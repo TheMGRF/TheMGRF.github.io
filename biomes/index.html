@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Biome Creator</title>
+
+    <!-- Meta Stuff -->
+    <meta charset="UTF-8">
+    <meta name="author" content="TheMGRF">
+    <meta name="description" content="TheMGRF's Biome Creator.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/biomes.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+    <div class="content">
+        <h1>Biome Creator</h1>
+
+        <hr>
+
+        <form id="biome-form" action="" method="post" role="form">
+            <p>
+                <label for="name">Biome Name</label>
+                <input id="name" type="text" name="name" value="default_biome">
+            </p>
+
+            <p>
+                <label for="temperature">Temperature</label>
+                <input id="temperature" type="number" step=".01" name="temperature" value="0.0">
+            </p>
+
+            <p>
+                <label for="downfall">Downfall</label>
+                <input id="downfall" type="number" step=".01" name="downfall" value="0.0">
+            </p>
+
+            <p>
+                <label for="precipitation">Precipitation</label>
+                <input id="precipitation" type="number" step=".01" name="precipitation" value="0.0">
+            </p>
+
+            <p>
+                <label for="particle">Ambient Particle</label>
+                <input id="particle" type="text" name="particle">
+            </p>
+
+            <p>
+                <label for="probability">Ambient Particle Probability</label>
+                <input id="probability" type="number" step=".01" name="probability" value="0.0">
+            </p>
+
+            <p>
+                <label for="sky_color">Sky Color</label>
+                <input id="sky_color" type="color" name="sky_color">
+            </p>
+
+            <p>
+                <label for="fog_color">Fog Color</label>
+                <input id="fog_color" type="color" name="fog_color">
+            </p>
+
+            <p>
+                <label for="water_color">Water Color</label>
+                <input id="water_color" type="color" name="water_color">
+            </p>
+
+            <p>
+                <label for="water_fog_color">Water Fog Color</label>
+                <input id="water_fog_color" type="color" name="water_fog_color">
+            </p>
+
+            <p>
+                <label for="grass_color">Grass Color</label>
+                <input id="grass_color" type="color" name="grass_color">
+            </p>
+
+            <p>
+                <label for="foliage_color">Foliage Color</label>
+                <input id="foliage_color" type="color" name="foliage_color">
+            </p>
+
+            <br>
+
+            <input id="submit" type="submit">
+
+        </form>
+
+        <h2>Output</h2>
+
+        <p id="output">Output will appear here...</p>
+
+        <button id="download-btn">Download</button>
+    </div>
+</body>
+
+<script src="../assets/js/biomes.js"></script>
+
+</html>
