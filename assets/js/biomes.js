@@ -5,7 +5,7 @@ form.addEventListener("submit", (event) => {
 });
 
 const output = document.getElementById("output");
-const slots = [4, 5, 6, 11, 13, 15, 16, 17, 18, 19, 20];
+const slots = [4, 5, 6, 11, 13, 15, 16, 17, 18, 19, 20, 21]; // the elements from data to replace/insert in to
 
 function submit(formData) {
     console.log("Creating biome data...")
@@ -32,6 +32,7 @@ function submit(formData) {
         "  {},",
         "  {},",
         "  {},",
+        "  {},",
         "  {}",
         "},",
         "\"starts\": [],",
@@ -44,7 +45,8 @@ function submit(formData) {
 
     for (let i = 0; i < formData.length; i++) {
         const entry = formData[i];
-        if (entry.id === "Submit" || entry.id === "name") continue;
+        const id = entry.id;
+        if (id === "Submit" || id === "name") continue;
 
         const type = entry.type;
         let value = entry.value;
@@ -70,7 +72,7 @@ function submit(formData) {
                 data[slot] = val;
                 console.log(val);
             } else {
-                const output = "\"" + labelText + "\": \"" + value + "\"";
+                const output = "  \"" + labelText + "\": \"" + value + "\"";
                 data[slot] = output;
                 console.log(output);
             }

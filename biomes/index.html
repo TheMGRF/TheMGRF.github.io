@@ -36,12 +36,12 @@
 
             <p>
                 <label for="temperature">Temperature</label>
-                <input id="temperature" type="number" step=".01" name="temperature" value="0.0">
+                <input id="temperature" type="number" step=".01" name="temperature" value="0.8" min="0.0" max="1.0">
             </p>
 
             <p>
                 <label for="downfall">Downfall</label>
-                <input id="downfall" type="number" step=".01" name="downfall" value="0.0">
+                <input id="downfall" type="number" step=".01" name="downfall" value="0.0" min="0.0" max="1.0">
             </p>
 
             <p>
@@ -62,37 +62,42 @@
 
             <p>
                 <label for="probability">Ambient Particle Probability</label>
-                <input id="probability" type="number" step=".01" name="probability" value="0.0">
+                <input id="probability" type="number" step=".01" name="probability" value="0.0" min="0.0" max="1.0">
             </p>
 
             <p>
                 <label for="sky_color">Sky Color</label>
-                <input id="sky_color" type="color" name="sky_color">
+                <input id="sky_color" type="color" name="sky_color" value="#33ccff">
             </p>
 
             <p>
                 <label for="fog_color">Fog Color</label>
-                <input id="fog_color" type="color" name="fog_color">
+                <input id="fog_color" type="color" name="fog_color" value="#33ccff">
             </p>
 
             <p>
                 <label for="water_color">Water Color</label>
-                <input id="water_color" type="color" name="water_color">
+                <input id="water_color" type="color" name="water_color" value="#0099ff">
             </p>
 
             <p>
                 <label for="water_fog_color">Water Fog Color</label>
-                <input id="water_fog_color" type="color" name="water_fog_color">
+                <input id="water_fog_color" type="color" name="water_fog_color" value="#0099ff">
             </p>
 
             <p>
                 <label for="grass_color">Grass Color</label>
-                <input id="grass_color" type="color" name="grass_color">
+                <input id="grass_color" type="color" name="grass_color" value="#99ff99">
             </p>
 
             <p>
                 <label for="foliage_color">Foliage Color</label>
-                <input id="foliage_color" type="color" name="foliage_color">
+                <input id="foliage_color" type="color" name="foliage_color" value="#99ff99">
+            </p>
+			
+			<p>
+                <label for="ambient_sound">Ambient Sound</label>
+                <input id="ambient_sound" type="text" placeholder="minecraft:ambient.basalt_deltas.loop" name="ambient_sound">
             </p>
 
             <br>
