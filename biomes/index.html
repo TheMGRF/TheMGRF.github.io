@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Biome Creator</title>
+    <title>TheMGRF | Biome Creator</title>
 
     <!-- Meta Stuff -->
     <meta charset="UTF-8">
@@ -26,6 +26,50 @@
     <div class="content">
         <h1>Biome Creator</h1>
 
+        <div id="how-to">
+            <h3>💡 How to use</h3>
+            <p>
+                This tool will help create an automatic custom biome JSON output that can be copied into a datapack and loaded into worlds. 
+                Before clicking the "Download" button at the bottom of the page be sure to click the "Generate" button and review your output.
+            </p>
+            <p>
+                Elements like the temperature and downfall are float values and are specified between 0 and 1 using decimals.
+                <ul>
+                    <li><b>Temperature:</b> Controls gameplay features like grass and foliage color and whether snow golems take damage.</li>
+                    <li><b>Downfall:</b> Controls grass and foliage color, a value above 0.85 also makes fire burn out faster.</li>
+                    <li><b>Grass Colour Modifier:</b> Controls grass colour variation based on <i>some</i> vanilla biomes.</li>
+                </ul>                
+            </p>
+
+            <h4>🌳 Colours</h4>
+            <p>
+                You can set full RGB custom colour values for the sky, sky fog, water, water fog, grass, and foliage.
+                These colour values are applied on top of a greyscale image so expect some colour offset with regards to grass/water vibrancy when viewed in-game.
+            </p>
+
+            <h4>✨ Particles</h4>
+            <p>
+                Biomes can emit client side particles in 3D world space based on the values you enter here but it is <b>optional</b> and not required for the biome or this tool to work. 
+                When selecting a particle you can choose from the dropdown menu and enter the probability of that particle appearing.
+                <br>
+                These particles will be ambiently emitted in all air spaces in a 3D biome.
+            </p>
+            <p> 
+                The probability controls how often the particle spawns, a value of 1 (the highest value) will be a LOT of particles.
+                Good amient values are ususally between 0.01 and 0.05 but you can go higher or lower if you want. The bounds are capped at 0 to 1.
+            </p>
+
+            <h4>🎵 Sounds</h4>
+            <p>Theres not much here yet but theres an ambient sound that will play client side occasionally for players in the custom biome. In future this will support mood sound effects, ambient music, and addition sounds.</p>
+
+            <h4>⚠️ Warning</h4>
+            <p>This generator is designed to only support client side features of the custom biome data pack system. Subsequently, fields like features, carvers, spawners, etc. will not be supported.</p>
+        </div>
+
+        <a href="#biome-form">
+            <button id="continue-btn">Continue</button>
+        </a>
+
         <hr>
 
         <form id="biome-form" action="" method="post" role="form">
@@ -37,6 +81,14 @@
             <p>
                 <label for="temperature">Temperature</label>
                 <input id="temperature" type="number" step=".01" name="temperature" value="0.8" min="0.0" max="1.0">
+            </p>
+
+            <p>
+                <label for="temperature_modifier">Temperature Modifier</label>
+                <select id="temperature_modifier" name="temperature_modifier">
+                    <option value="none">None</option>
+                    <option value="frozen">Frozen</option>
+                </select>
             </p>
 
             <p>
@@ -66,43 +118,52 @@
             </p>
 
             <p>
-                <label for="sky_color">Sky Color</label>
+                <label for="sky_color">Sky Colour</label>
                 <input id="sky_color" type="color" name="sky_color" value="#33ccff">
             </p>
 
             <p>
-                <label for="fog_color">Fog Color</label>
+                <label for="fog_color">Fog Colour</label>
                 <input id="fog_color" type="color" name="fog_color" value="#33ccff">
             </p>
 
             <p>
-                <label for="water_color">Water Color</label>
+                <label for="water_color">Water Colour</label>
                 <input id="water_color" type="color" name="water_color" value="#0099ff">
             </p>
 
             <p>
-                <label for="water_fog_color">Water Fog Color</label>
+                <label for="water_fog_color">Water Fog Colour</label>
                 <input id="water_fog_color" type="color" name="water_fog_color" value="#0099ff">
             </p>
 
             <p>
-                <label for="grass_color">Grass Color</label>
+                <label for="grass_color">Grass Colour</label>
                 <input id="grass_color" type="color" name="grass_color" value="#99ff99">
             </p>
 
             <p>
-                <label for="foliage_color">Foliage Color</label>
+                <label for="grass_color_modifier">Grass Colour Modifier</label>
+                <select id="grass_color_modifier" name="grass_color_modifier">
+                    <option value="none">None</option>
+                    <option value="dark_forest">Dark Forest</option>
+                    <option value="swamp">Swamp</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="foliage_color">Foliage Colour</label>
                 <input id="foliage_color" type="color" name="foliage_color" value="#99ff99">
             </p>
 			
 			<p>
                 <label for="ambient_sound">Ambient Sound</label>
-                <input id="ambient_sound" type="text" placeholder="minecraft:ambient.basalt_deltas.loop" name="ambient_sound">
+                <input style="width: 20em;" id="ambient_sound" type="text" placeholder="minecraft:ambient.basalt_deltas.loop" name="ambient_sound">
             </p>
 
             <br>
 
-            <input id="submit" type="submit">
+            <input id="submit" type="submit" value="Generate">
 
         </form>
 

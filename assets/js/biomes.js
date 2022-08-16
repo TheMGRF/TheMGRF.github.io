@@ -4,8 +4,11 @@ form.addEventListener("submit", (event) => {
     submit(form.elements);
 });
 
+const downloadBtn = document.getElementById("download-btn");
+downloadBtn.disabled = true; // default to disabled until they gen a file
+
 const output = document.getElementById("output");
-const slots = [4, 5, 6, 11, 13, 15, 16, 17, 18, 19, 20, 21]; // the elements from data to replace/insert in to
+const slots = [4, 5, 6, 7, 12, 14, 16, 17, 18, 19, 20, 21, 22, 23]; // the elements from data to replace/insert in to
 
 function submit(formData) {
     console.log("Creating biome data...")
@@ -19,6 +22,7 @@ function submit(formData) {
         "{},",
         "{},",
         "{},",
+        "{},",
         "\"category\": \"none\",",
         "\"effects\": {",
         "  \"particle\": {",
@@ -27,6 +31,7 @@ function submit(formData) {
         "    },",
         "    {}",
         "  },",
+        "  {},",
         "  {},",
         "  {},",
         "  {},",
@@ -90,6 +95,8 @@ function submit(formData) {
         }
         output.textContent += "  " + data[i] + "\n";
     }
+
+    downloadBtn.disabled = false;
 }
 
 const download = document.getElementById("download-btn");
